@@ -2,42 +2,42 @@
 #define SIZE 2
 double fi2(double y)
 {
-	return (1 - cos(y)/2.0);
+	return (0.5 - cos(y - 1));
 }
 
 double f2(double x, double y)
 {
-	return (2*x + cos(y) - 2);
+	return (x + cos(y - 1) - 0.5);
 }
 
 double fi1(double x)
 {
-	return (sin(x + 1) - 1.2);
+	return (3 + cos(x));
 }
 
 double f1(double x, double y)
 {
-	return (sin(x + 1) - y - 1.2);
+	return (y - cos(x) - 3);
 }
 
 double f2DX(double x, double y)
 {
-	return 2;
+	return 1;
 }
 
 double f2DY(double x, double y)
 {
-	return -1 * sin(y);
+	return -1 * sin(y - 1);
 }
 
 double f1DX(double x, double y)
 {
-	return cos(x + 1);
+	return sin(x);
 }
 
 double f1DY(double x, double y)
 {
-	return -1;
+	return 1;
 }
 
 void IterationMethod(double(*f1)(double), double(*f2)(double), const double eps)
